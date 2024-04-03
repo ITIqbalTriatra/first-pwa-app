@@ -4,11 +4,12 @@ import AgeDropdown from "./widgets/options/AgeDropdown";
 import IWidget from "react-chatbot-kit/build/src/interfaces/IWidget";
 import IConfig from "react-chatbot-kit/build/src/interfaces/IConfig";
 import chatGPT from '../assets/chatgpt.svg';
+import DateOptions from "./widgets/options/DateOptions";
 
 const config: IConfig = {
-  botName: "Student Info System Bot",
+  botName: "Triatra System Bot",
   initialMessages: [
-    createChatBotMessage(`Hello, Welcome to student info system!`, {
+    createChatBotMessage(`Hello, Welcome to booking room meeting system!`, {
       widget: "gotIt",
     }),
   ],
@@ -31,6 +32,10 @@ const config: IConfig = {
     {
       widgetName: "ageDropdown",
       widgetFunc: (props: any) => <AgeDropdown {...props} />,
+    },
+    {
+      widgetName: "dateOptions",
+      widgetFunc: (props: any) => <DateOptions {...props} />,
     },
   ] as IWidget[],
 };

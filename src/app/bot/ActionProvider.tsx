@@ -25,6 +25,7 @@ const ActionProvider = ({
   children: any;
 }) => {
   const dispatch = useDispatch<AppDispatch>();
+
   const handleGotIt = () => {
     const botMessage = createChatBotMessage("Enter your Name", {});
 
@@ -33,6 +34,7 @@ const ActionProvider = ({
       messages: [...prev.messages, botMessage],
     }));
   };
+
   const handleUserInput = (age?: number) => {
     setState(
       (prev: {
@@ -51,8 +53,8 @@ const ActionProvider = ({
           prev.messages[prev.messages.length - 2].message === "Enter your Name"
         ) {
           dispatch(addName(prev.messages[prev.messages.length - 1].message));
-          botMessage = createChatBotMessage("Enter your Age", {
-            widget: "ageDropdown",
+          botMessage = createChatBotMessage("Enter Reservation Date", {
+            widget: "dateOptions",
           });
           return {
             ...prev,
@@ -74,6 +76,7 @@ const ActionProvider = ({
       }
     );
   };
+
   return (
     <div>
       {React.Children.map(children, (child) => {

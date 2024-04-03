@@ -77,9 +77,9 @@ const Chat = () => {
   return (
     <StyledChat>
       <div className="intro">
-        <h1>Enter into Student Info System</h1>
+        <h1>Enter Into Room Meeting Management</h1>
         <button onClick={() => setIsOpened((prev) => !prev)}>
-          Enroll Now!
+          Book Now!
         </button>
       </div>
       {isOpened && (

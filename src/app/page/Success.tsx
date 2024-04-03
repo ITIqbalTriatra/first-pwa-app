@@ -15,8 +15,7 @@ const Success = () => {
   }
   return (
     <StyledSuccess>
-      Your name {name.toUpperCase()} aged {age} has been added to student
-      system. You may now exit.
+      Your name {name.toUpperCase()} date {age} has been success
     </StyledSuccess>
   );
 };
