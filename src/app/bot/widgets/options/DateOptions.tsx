@@ -14,7 +14,7 @@ const DateOptions: React.FC<any> = (props) => {
   };
 
   return (
-    <DatePicker onChange={handleDate} />
+    <DatePicker onChange={handleDate} needConfirm />
   );
 };
 

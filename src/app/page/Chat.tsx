@@ -21,7 +21,7 @@ const StyledChat = styled.div`
   & .intro {
     text-align: center;
     & > h1 {
-      font-size: 3.5rem;
+      font-size: 1.5rem;
     }
     & > button {
       margin-top: 1rem;
@@ -77,7 +77,7 @@ const Chat = () => {
   return (
     <StyledChat>
       <div className="intro">
-        <h1>Enter Into Room Meeting Management</h1>
+        <h1 className="">Enter Into Room Meeting Management</h1>
         <button onClick={() => setIsOpened((prev) => !prev)}>
           Book Now!
         </button>
