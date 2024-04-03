@@ -4,7 +4,7 @@ type MessageState = {
   count: number;
   user: {
     name: string;
-    age: string;
+    date: string;
   };
 };
 
@@ -12,7 +12,7 @@ const initialState = {
   count: -1,
   user: {
     name: "",
-    age: "0",
+    date: "0",
   },
 } as MessageState;
 
@@ -23,8 +23,8 @@ export const messageSlice = createSlice({
     addName: (state, action: PayloadAction<string>) => {
       state.user.name = action.payload;
     },
-    addAge: (state, action: PayloadAction<string>) => {
-      state.user.age = action.payload;
+    addDate: (state, action: PayloadAction<string>) => {
+      state.user.date = action.payload;
     },
     startCount: (state) => {
       state.count = 5;
@@ -35,6 +35,6 @@ export const messageSlice = createSlice({
   },
 });
 
-export const { addName, addAge, startCount, decrementCount } =
+export const { addName, addDate, startCount, decrementCount } =
   messageSlice.actions;
 export default messageSlice.reducer;

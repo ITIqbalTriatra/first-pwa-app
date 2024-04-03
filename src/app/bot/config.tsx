@@ -31,10 +31,6 @@ const config: IConfig = {
       widgetFunc: (props: any) => <GotIt {...props} />,
     },
     {
-      widgetName: "ageDropdown",
-      widgetFunc: (props: any) => <AgeDropdown {...props} />,
-    },
-    {
       widgetName: "dateOptions",
       widgetFunc: (props: any) => <DateOptions {...props} />,
     },

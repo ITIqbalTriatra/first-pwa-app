@@ -2,7 +2,7 @@ import React from "react";
 import { IMessageOptions } from "react-chatbot-kit/build/src/interfaces/IMessages";
 import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
-import { addAge, addName } from "../redux/features/messages-slice";
+import { addDate, addName } from "../redux/features/messages-slice";
 
 const ActionProvider = ({
   createChatBotMessage,
@@ -61,7 +61,7 @@ const ActionProvider = ({
             messages: [...prev.messages, botMessage],
           };
         } else if (age) {
-          dispatch(addAge(age.toString()));
+          dispatch(addDate(age.toString()));
           botMessage = createChatBotMessage(
             "Thank you. In 5 seconds, bot will exit.",
             {}
