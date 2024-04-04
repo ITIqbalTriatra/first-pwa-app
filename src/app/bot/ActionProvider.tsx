@@ -4,11 +4,7 @@ import { useDispatch } from "react-redux";
 import { AppDispatch } from "../redux/store";
 import { addDate, addName } from "../redux/features/messages-slice";
 
-const ActionProvider = ({
-  createChatBotMessage,
-  setState,
-  children,
-}: {
+const ActionProvider = ({ createChatBotMessage, setState, children, }: {
   createChatBotMessage: (
     message: string,
     options: IMessageOptions
@@ -49,9 +45,8 @@ const ActionProvider = ({
         }[];
       }) => {
         let botMessage;
-        if (
-          prev.messages[prev.messages.length - 2].message === "Enter your Name"
-        ) {
+
+        if (prev.messages[prev.messages.length - 2].message === "Enter your Name") {
           dispatch(addName(prev.messages[prev.messages.length - 1].message));
           botMessage = createChatBotMessage("Enter Reservation Date", {
             widget: "dateOptions",

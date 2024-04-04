@@ -9,6 +9,7 @@ import { decrementCount } from "../redux/features/messages-slice";
 import config from "../bot/config";
 import MessageParser from "../bot/MessageParser";
 import ActionProvider from "../bot/ActionProvider";
+import PersonVector from "../assets/person.svg"
 
 const StyledChat = styled.div`
   position: relative;
@@ -78,7 +79,10 @@ const Chat = () => {
   return (
     <StyledChat>
       <div className="intro">
-        <h1 className="">Enter Into Room Meeting Management</h1>
+        <div className="flex justify-center">
+          <img src={PersonVector} />
+        </div>
+        <h1 className="font-medium">Enter Into Room Meeting Management</h1>
         <button onClick={() => setIsOpened((prev) => !prev)}>
           Book Now!
         </button>

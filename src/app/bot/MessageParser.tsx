@@ -16,12 +16,10 @@ const MessageParser = ({
   const parse = (message: string) => {
     if (message.includes("got it!")) {
       actions.handleGotIt();
-    } else if (name) {
+    } else if (name && message !== '') {
       actions.handleUserInput();
-    } else if (message == '') {
-      actions.handleGotIt();
     } else {
-      actions.handleUserInput();
+      actions.handleGotIt();
     }
   };
 
