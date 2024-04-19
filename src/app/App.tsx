@@ -1,4 +1,4 @@
-import { Suspense, lazy, useEffect, useState } from "react";
+import { Suspense, lazy } from "react";
 import { createGlobalStyle } from "styled-components";
 import { AnimatePresence } from "framer-motion";
 import { Route, Routes, useLocation } from "react-router-dom";
@@ -86,45 +86,10 @@ const GlobalStyle = createGlobalStyle`
 `;
 
 const App = () => {
-  const [installPromptEvent, setInstallPromptEvent] = useState<any>(null);
-  const [showInstallPrompt, setShowInstallPrompt] = useState<any>(false);
   const location = useLocation();
-
-  useEffect(() => {
-    const handleBeforeInstallPrompt = (e: any) => {
-      e.preventDefault();
-      setInstallPromptEvent(e);
-      setShowInstallPrompt(true);
-    };
-
-    window.addEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-
-    return () => {
-      window.removeEventListener('beforeinstallprompt', handleBeforeInstallPrompt);
-    };
-  }, []);
-
-  const handleInstallClick = async () => {
-    if (!installPromptEvent) return;
-    installPromptEvent.prompt();
-    const { outcome } = await installPromptEvent.userChoice;
-    if (outcome === 'accepted') {
-      console.log('User accepted the install prompt');
-    } else {
-      console.log('User dismissed the install prompt');
-    }
-    setShowInstallPrompt(false);
-    setInstallPromptEvent(null);
-  };
-
   return (
     <>
       <GlobalStyle />
-      {showInstallPrompt && (
-        <div style={{ position: 'absolute', bottom: '20px', left: '20px' }}>
-          <button onClick={handleInstallClick}>Install App</button>
-        </div>
-      )}
       <Suspense
         fallback={
           <div
@@ -150,7 +115,6 @@ const App = () => {
       </Suspense>
     </>
   );
-
 };
 
 export default App;
