@@ -82,7 +82,7 @@ const Chat = () => {
         <div className="flex justify-center">
           <img src={PersonVector} />
         </div>
-        <h1 className="font-medium">Enter Into Room Meeting Management</h1>
+        <h1 className="font-medium">Enter Into Room Meeting Management Triatra</h1>
         <button onClick={() => setIsOpened((prev) => !prev)}>
           Book Now!
         </button>
